@@ -1,0 +1,25 @@
+using UnityEngine;
+
+namespace Octrees
+{
+    public class OctreeGenerator : MonoBehaviour
+    {
+        public GameObject[] objects;
+        [SerializeField] public float minNodeSize = 1f;
+        public readonly Graph waypoints = new();
+        Octree ot;
+        void Awake() => ot = new Octree(objects, minNodeSize, waypoints);
+
+        void OnDrawGizmos()
+        {
+            if(!Application.isPlaying)
+                return;
+            
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(ot.bounds.center, ot.bounds.size);
+
+            ot.root.DrawNode();
+            ot.graph.DrawGraph();
+        }
+    }
+}
