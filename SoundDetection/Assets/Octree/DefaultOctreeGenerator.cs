@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Octrees
 {
-    public class OctreeGenerator : MonoBehaviour
+    public class DefaultOctreeGenerator : MonoBehaviour
     {
         public GameObject[] objects;
         [SerializeField] public float minNodeSize = 1f;

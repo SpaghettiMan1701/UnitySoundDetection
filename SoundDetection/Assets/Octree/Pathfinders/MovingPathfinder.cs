@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEngine;
 
 namespace Octrees {
-    public class Mover : MonoBehaviour {
+    public class MovingPathfinder : MonoBehaviour {
         float speed = 5f;
         float accuracy = 1f;
         float turnSpeed = 5f;
@@ -11,7 +11,7 @@ namespace Octrees {
         OctreeNode currentNode;
         Vector3 destination;
         
-        public OctreeGenerator octreeGenerator;
+        public DefaultOctreeGenerator octreeGenerator;
         Graph graph;
 
         void Start() {
