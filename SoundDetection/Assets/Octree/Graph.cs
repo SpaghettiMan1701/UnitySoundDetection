@@ -31,7 +31,7 @@ namespace Octrees
 
             if (start == null || end == null)
             {
-                Debug.LogError("Start or End node not found in graph");
+                Debug.LogError($"Start [{start!=null}] or End [{end!=null}] node not found in graph");
                 return false;
             }
 
