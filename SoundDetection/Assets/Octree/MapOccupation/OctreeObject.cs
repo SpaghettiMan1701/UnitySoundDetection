@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Octrees
+namespace Octrees.Map
 {
     public class OctreeObject
     {

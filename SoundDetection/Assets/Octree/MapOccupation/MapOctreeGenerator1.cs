@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Octrees
+namespace Octrees.Map
 {
     public class MapOctreeGenerator : MonoBehaviour
     {
@@ -30,7 +30,7 @@ namespace Octrees
             Gizmos.color = Color.green;
             Gizmos.DrawWireCube(ot.bounds.center, ot.bounds.size);
 
-            if(shownodes) ot.root.DrawNode(); // Visualize all nodes
+            if (shownodes) ot.root.DrawNode(); // Visualize all nodes
             // ot.graph.DrawGraph(); // Visualize all connections
         }
     }

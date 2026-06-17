@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 
-namespace Octrees
+namespace Octrees.Map
 {
     public class Graph
     {

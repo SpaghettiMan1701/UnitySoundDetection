@@ -1,20 +1,19 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace Octrees
 {
-    public class PredifinedMovingPathfinder : MonoBehaviour
+    public class MovingPathfinder : MonoBehaviour
     {
-        float speed = 5f;
-        float accuracy = 1f;
-        float turnSpeed = 5f;
-        [SerializeField] List<GameObject> targets = new();
+        [SerializeField] float speed = 5f;
+        [SerializeField] float accuracy = 1f;
+        [SerializeField] float turnSpeed = 5f;
+
         int currentWaypoint;
         OctreeNode currentNode;
         Vector3 destination;
 
-        public MapOctreeGenerator octreeGenerator;
+        public DefaultOctreeGenerator octreeGenerator;
         Graph graph;
 
         void Start()
@@ -37,7 +36,6 @@ namespace Octrees
             if (Vector3.Distance(graph.GetPathNode(currentWaypoint).bounds.center, transform.position) < accuracy)
             {
                 currentWaypoint++;
-                Debug.Log($"Waypoint {currentWaypoint} reached");
             }
 
             if (currentWaypoint < graph.GetPathLength())
@@ -65,12 +63,10 @@ namespace Octrees
         void GetRandomDestination()
         {
             OctreeNode destinationNode;
-
-            int RandomIndex = Random.Range(0, targets.Count - 1);
-            destinationNode = octreeGenerator.ot.FindClosestNode(targets[RandomIndex].transform.position);
-
-            graph.AStar(currentNode, destinationNode);
-
+            do
+            {
+                destinationNode = graph.nodes.ElementAt(Random.Range(0, graph.nodes.Count)).Key;
+            } while (!graph.AStar(currentNode, destinationNode));
             currentWaypoint = 0;
         }
 

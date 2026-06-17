@@ -4,7 +4,7 @@ using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Octrees
+namespace Octrees.Map
 {
     public class OctreeNode
     {
