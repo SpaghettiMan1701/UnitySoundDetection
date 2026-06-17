@@ -80,7 +80,7 @@ namespace Octrees {
 
             while (openSet.Count > 0) {
                 if (++iterationCount > maxIterations) {
-                    Debug.LogError("A* exceeded maximum iterations.");
+                    Debug.LogWarning("A* exceeded maximum iterations.");
                     return false;
                 }
                 
