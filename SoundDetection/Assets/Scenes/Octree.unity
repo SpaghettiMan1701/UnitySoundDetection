@@ -2096,6 +2096,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 899882331072498244, guid: 064a12a9678d233428ce1efe8ffe5da6, type: 3}
+      propertyPath: turnSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 899882331072498244, guid: 064a12a9678d233428ce1efe8ffe5da6, type: 3}
       propertyPath: octreeGenerator
       value: 
       objectReference: {fileID: 834108714}

@@ -36,7 +36,6 @@ namespace Octrees
             if (Vector3.Distance(graph.GetPathNode(currentWaypoint).bounds.center, transform.position) < accuracy)
             {
                 currentWaypoint++;
-                Debug.Log($"Waypoint {currentWaypoint} reached");
             }
 
             if (currentWaypoint < graph.GetPathLength())

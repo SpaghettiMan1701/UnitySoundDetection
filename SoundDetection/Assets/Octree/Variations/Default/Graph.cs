@@ -56,7 +56,7 @@ namespace Octrees {
             return pathList[index].octreeNode;
         }
         
-        const int maxIterations = 10000;
+        const int maxIterations = 50000;
 
         public bool AStar(OctreeNode startNode, OctreeNode endNode) {
             pathList.Clear();
