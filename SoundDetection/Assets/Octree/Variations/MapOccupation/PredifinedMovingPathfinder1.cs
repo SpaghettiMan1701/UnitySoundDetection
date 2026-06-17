@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Octrees.Map;
 
-namespace Octrees
+namespace Octrees.Map
 {
     public class PredifinedMovingPathfinder : MonoBehaviour
     {
