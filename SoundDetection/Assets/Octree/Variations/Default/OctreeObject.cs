@@ -1,15 +1,13 @@
 using UnityEngine;
 
-namespace Octrees
-{
-    public class OctreeObject
-    {
-        Bounds bounds;
-        public OctreeObject(GameObject gameObject)
-        {
-            bounds = gameObject.GetComponent<Collider>().bounds;
-        }
+namespace Octrees {
+    public class OctreeObject {
+        public Bounds bounds;
 
-        public bool Intersects(Bounds otherBounds) => bounds.Intersects(otherBounds);
+        public OctreeObject(GameObject obj) {
+            bounds = obj.GetComponent<Collider>().bounds;
+        }
+        
+        public bool Intersects(Bounds boundsToCheck) => bounds.Intersects(boundsToCheck);
     }
 }

@@ -6,8 +6,10 @@ namespace Octrees
     {
         public GameObject[] objects;
         [SerializeField] public float minNodeSize = 1f;
-        public readonly Graph waypoints = new();
         public Octree ot;
+
+        public readonly Graph waypoints = new();
+
         void Awake() => ot = new Octree(objects, minNodeSize, waypoints);
 
         void OnDrawGizmos()
@@ -16,8 +18,8 @@ namespace Octrees
                 return;
 
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(ot.bounds.center, ot.bounds.size);
-
+            // Visualize total Octree Bounds
+            //Gizmos.DrawWireCube(ot.bounds.center, ot.bounds.size);
             ot.root.DrawNode(); // Visualize all nodes
             // ot.graph.DrawGraph(); // Visualize all connections
         }
